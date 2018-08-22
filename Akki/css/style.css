@@ -1,0 +1,291 @@
+/* Make margins=0, padding=0, float:left/right to bring texts to correct position
+and always give min-height*; also float:none is imp for media queries*/
+/* In main containers like <header> and <footer> and #showcase, use padding more and
+in internal contents like text,h1,form use margin property */
+/*Dont forget semi colons*/
+/* no gap between <aside> and '#'' */
+
+
+body{
+  font: 15px/1.5 Arial, Helvetica,sans-serif;
+  /* font size;line height;font-family  */
+
+  padding:0;
+  margin:0;
+  background-color:#f4f4f4;/*standard colour*/
+}
+
+/* Global */
+.container{
+  width:90%;
+  /*leaves 5 from left, 5 from right(maybe you can keep it 100%,
+    then adjust the padding)*/
+  margin:auto;/* margin=0px */
+  overflow:hidden;
+  /*keep it hidden always*/
+}
+
+ul{
+  margin:0px;
+  padding:0px;
+}
+
+.button_1{
+  height:34px;
+  background:#e8491d;
+  border:0;/*Necessary for buttons*/
+  padding-left: 20px;
+  margin-left: 5px;
+  padding-right:20px;
+  margin-top:2px;
+  color:#ffffff;
+
+}
+
+.dark{
+  padding:15px;
+  background:#35424a;
+  color:#ffffff;
+  margin-top:10px;
+  margin-bottom:10px;
+}
+
+/* Header **/
+header{
+  background:#35424a;
+  color:#ffffff;
+  padding-top:25px;
+  min-height:70px;/*min height=80px, if exceeds then that height applies*/
+  border-bottom:#e8491d 3px groove;
+  /* for more border features =https://www.w3schools.com/css/css_border.asp */
+}
+
+header a{
+  color:#ffffff;
+  text-decoration:none;/*to remove underline*/
+  text-transform: uppercase;
+  font-size:17.5px;
+  padding: 0px 10px 0px 10px;
+}
+/* <a> considers each of the 3 li's as diff(used to change features of text) and
+<li> used to change spacing*/
+
+header li{
+  float:left;
+  display:inline;/*to arrage the li's horizontally*/
+  /* padding: 0px 10px 0px 10px; */
+}
+
+header #branding{
+  float:left;
+}
+
+header #branding h1{
+  margin:0;
+}
+
+header nav{
+  float:right;
+  margin-top:10px;
+  font-size:17.5px;
+}
+
+header .highlight, header .current a{
+  color:#e8491d;
+  font-weight:bold;
+}
+
+header a:hover{
+  color:#cccccc;
+  font-weight:bold;
+
+}
+
+/* Showcase */
+#showcase{
+  min-height:350px;
+  background:url('../img/showcase.jpg') no-repeat -200px -350px;
+  text-align: center;
+  color:#ffffff;
+  opacity: 1;
+}
+
+#showcase h1{
+  margin-top:100px;
+  font-size:45px;
+  padding-bottom:10px;
+  margin-bottom:0px;
+  /*Or you could have directly done margin-bottom:10px instead of last 2 statements*/
+}
+
+#showcase p{
+  font-size:20px;
+}
+
+/* Newsletter */
+#newsletter{
+  margin:0px;
+  padding-bottom:10px;
+  color:#ffffff;
+  background:#35424a;
+  min-height:50px;
+}
+
+#newsletter h1{
+  padding-top:15px;
+  float:left;
+  margin:0px;
+}
+
+#newsletter form {
+  float:right;
+  margin-top:10px;
+}
+
+#newsletter #mail{
+  padding:4px;
+  height:20px;
+  width:230px;
+}
+
+/* Boxes */
+#boxes{
+  margin-top:20px;
+  padding-left:25px;
+}
+
+#boxes .box{
+  float:left;
+  text-align: center;
+  width:30%;
+  padding:10px;
+}/*The paragraph was imp to align the elements horizontally using width and
+float property*/
+
+#boxes .box img{
+  width:100px;
+}
+
+/* Sidebar */
+aside#sidebar{
+  float:right;
+  width:30%;
+  margin-top:10px;
+
+}
+aside#sidebar p{
+  color:#e8491d;
+}
+aside#sidebar .quote input, aside#sidebar .quote textarea{
+  width:90%;
+  padding:5px;
+}
+
+/* Main-col */
+article#main-col{
+  float:left;
+  width:65%;
+}
+
+/* Services */
+ul#services li{
+  /* list-style: none; */
+  padding:20px;
+  border: #cccccc solid 1px;
+  margin-bottom:10px;
+  background:#e6e6e6;
+}
+#info
+{
+  float:right;
+  text-align: left;
+}
+footer{
+  padding:20px;
+  margin-top:10px;
+  color:#ffffff;
+  background-color:#000307;
+  text-align: center;
+}
+
+/* Media Queries */
+@media(max-width: 768px){
+  header #branding,
+  header nav,
+  header nav li,
+  #newsletter h1,
+
+  article#main-col,
+  aside#sidebar{
+    float:none;
+    text-align:center;
+    width:100%;
+  }
+  #boxes .box{
+    float:none;
+    text-align: justify;
+    width:90%;
+  }
+
+#boxes .box h3
+{
+  text-align: center;
+}
+#boxes .box img
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    max-width:100px;
+}/*This para intends to bring the image to center*/
+
+#newsletter form
+{
+  float:none;
+  text-align: center;
+
+}
+
+  header
+  {
+    padding-bottom:20px;
+  }
+
+  footer #info
+  {
+    padding:0px;
+    margin:0px;
+    float:left;
+
+  }
+  footer p
+  {
+    padding-top:60px;
+    /* margin:0px; */
+    font-size: 14px;
+  }
+
+  .button_1{
+    width: 243px;
+  }
+
+  #mail{
+    margin-left:6px;
+
+  }/*last two para for aligning mail and subscribe in proper posn*/
+
+  #showcase h1{
+    margin-top:40px;
+  }
+
+  .quote button{
+    display:block;
+    width:100%;
+  }/*This para usually required for buttons*/
+
+  #newsletter form input[type="email"], .quote input, .quote textarea{
+    width:100%;
+    margin-bottom:5px;
+  }
+}
