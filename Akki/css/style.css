@@ -1,4 +1,4 @@
-/* Make margins=0, padding=0, float:left/right to bring texts to correct position
+/* Make margins=0, padding=0, float:left/right/none to bring texts to correct position
 and always give min-height*; also float:none is imp for media queries*/
 /* In main containers like <header> and <footer> and #showcase, use padding more and
 in internal contents like text,h1,form use margin property */
@@ -118,8 +118,11 @@ header a:hover{
   /*Or you could have directly done margin-bottom:10px instead of last 2 statements*/
 }
 
-#showcase p{
+#showcase .container p
+{
   font-size:20px;
+  position:absolute;
+  top: 370px;
 }
 
 /* Newsletter */
@@ -159,7 +162,8 @@ header a:hover{
   text-align: center;
   width:30%;
   padding:10px;
-}/*The paragraph was imp to align the elements horizontally using width and
+}
+/*The paragraph was imp to align the elements horizontally using width and
 float property*/
 
 #boxes .box img{
@@ -288,4 +292,19 @@ footer{
     width:100%;
     margin-bottom:5px;
   }
+}
+.mySkills
+{
+
+  position:absolute;
+  top:320px;
+  left:480px;
+}
+
+
+.mySkills li
+{
+  padding-left:20px;
+  /* padding-top:-10px !important; */
+  display:inline-block;
 }
